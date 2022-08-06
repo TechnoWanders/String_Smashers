@@ -1,0 +1,155 @@
+//this project is unfinished 
+//creating a custom string library function 
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+//function to take string as an input 
+string enters()
+{
+    string yummy;
+    cout<<"Enter a string "<<endl;
+    cin>>yummy;
+    return yummy;
+}//function to show string 1
+void showy(char sham[], int kam)
+{
+    int i;
+    for(i=0;i<kam;i++)
+    {
+        cout<<sham[i];
+    }
+    cout<<endl;
+}
+//function to show string 2 
+void showyy(string sham, int kam)
+{
+    int i;
+    for(i=0;i<kam;i++)
+    {
+        cout<<sham[i];
+    }
+    cout<<endl;
+}
+//function to find size of a string 
+int sizee(string str)
+{
+    int i=0;
+    while(str[i]!='\0') 
+    {
+        i++;
+    }
+    return i;
+}
+//function to capitalize first word of each letter 
+void capitalize()
+{
+    int kl,i,jam;
+    char abc[100];
+    for()
+    
+    for(i=0;i<kl;i++)
+    {
+        if(abc[i]==' ' || abc[i]=='\n')
+        {
+            jam=abc[i+1];
+            jam=jam-32;
+            abc[i+1]=jam;
+        }
+    }
+    showyy(abc,kl);
+}
+namespace strings
+{
+    //first function
+    void reversee()
+    {
+        int k,i;
+        string str1;
+        str1 = enters();
+        k = sizee(str1);
+        char abc[k];
+        for(i=0;i<k;i++)
+        {
+            abc[i]=str1[k-(i+1)];
+        }
+        showy(abc,k);
+    }
+    //second function
+    void changee()
+    {
+        string abc;
+        char kal;
+        int sike,siz,i,j;
+        abc=enters();
+        siz=sizee(abc);
+        
+        cout<<"Enter number of alphabets to be replaced "<<endl;
+        cin>>sike;
+        char gum[sike];
+        for(i=1;i<=sike;i++)
+        {
+        cout<<"Enter alphabet to be replaced with "<<endl;
+        cin>>gum[i];
+        cout<<"Enter the replacer "<<endl;
+        cin>>kal;
+        for(j=0;j<siz;j++)
+        {
+            if(abc[j]==gum[i])
+            {
+                abc[j]=kal;
+            }
+        }
+        }
+        showyy(abc,siz);
+    }
+    
+}
+int main()
+{
+    int a,chose;
+    cout<<endl;
+    cout<<"               WELCOME TO STRING SMASHERS "<<endl;
+    label:
+    cout<<"Here , you can perform various strings operations. "<<endl;
+    cout<<"we, will play with strings like amazingly. "<<endl;
+    cout<<"1. To reverse a given string"<<endl;
+    cout<<"2. To change every letter in a given string with the letter following it in the alphabet (ie. a becomes b, p becomes q, z becomes a). "<<endl;
+    cout<<"3. To capitalize the first letter of each word of a given string. Words must be separated by only one space. "<<endl;
+    cout<<"4. To find the largest word in a given string. "<<endl;
+    cout<<"5. To sort characters"<<endl;
+    cout<<"6. To check whether the characters e and g are separated by exactly 2 places anywhere in a given string at least once."<<endl;
+    cout<<"7. To count all the vowels in a given string"<<endl;
+    cout<<"Select a function"<<endl;
+    cin>>a;
+    switch(a)
+    {
+        case 1:
+        strings::reversee();
+        break;
+        
+        case 2:
+        strings::changee();
+        break;
+        
+        case 3:
+        capitalize();
+        break;
+        
+    }
+    cout<<"Want to replay??"<<endl;
+    cout<<"1{YAY} or 0{NAY}"<<endl;
+    cin>>chose;
+    if(chose==1)
+    {
+        goto label;
+    }
+    else if(chose==0)
+    {
+        exit(0);
+    }
+    else
+    {
+        cout<<"Please choose correct option "<<endl;
+    }
+}
